@@ -1,0 +1,5 @@
+build
+node_modules
+privacy/node_modules
+privacy/dist
+.DS_Store

@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "AllowCloudFrontRead",
+    "Effect": "Allow",
+    "Principal": { "Service": "cloudfront.amazonaws.com" },
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::shardrop-web-222629888198/*",
+    "Condition": { "StringEquals": { "AWS:SourceArn": "arn:aws:cloudfront::222629888198:distribution/E2ZQDFO3Y2GDX7" } }
+  }]
+}
