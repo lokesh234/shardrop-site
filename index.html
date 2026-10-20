@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shardrop</title>
+<meta name="description" content="Shardrop: a neon arcade game for iPhone. Smash the prisms that match your color, dodge the rest.">
+<meta name="theme-color" content="#0a0911">
+<meta name="apple-itunes-app" content="app-id=6824971462">
+<meta property="og:title" content="Shardrop">
+<meta property="og:description" content="Smash the prisms that match your color. Dodge the rest. A new Daily Prism every day.">
+<meta property="og:image" content="https://shardrop.com/d/og.png">
+<link rel="icon" href="/prism.svg" type="image/svg+xml">
+<style>
+  :root { --night: #0a0911; --ink: #f4f0e8; --muted: rgb(244 240 232 / .66); --rule: rgb(244 240 232 / .16);
+          --rounded: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, sans-serif; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100svh; background: var(--night); color: var(--ink);
+         font: 17px/1.55 system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
+         display: grid; place-items: center; padding: 32px 22px; }
+  main { max-width: 520px; }
+  h1 { margin: 18px 0 8px; font: 900 clamp(56px, 16vw, 96px)/.9 var(--rounded); letter-spacing: -.03em;
+       background: linear-gradient(100deg, #ff338c, #ffc726 50%, #a77bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  p { color: var(--muted); margin: 0 0 28px; }
+  a.store { display: inline-flex; align-items: center; min-height: 54px; padding: 0 24px; border-radius: 16px; background: var(--ink);
+            color: var(--night); font: 800 17px/1 var(--rounded); text-decoration: none; }
+  nav { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--rule); display: flex; gap: 24px; font: 500 13px/1 ui-monospace, Menlo, monospace; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<main>
+  <img src="/prism.svg" alt="" width="44" height="44">
+  <h1>Shardrop</h1>
+  <p>A neon arcade game for iPhone. Your ball changes color. Smash the prisms that match it, dodge the rest, and take on a new Daily Prism every day.</p>
+  <a class="store" href="https://apps.apple.com/app/id6824971462">Get it on the App Store</a>
+  <nav>
+    <a href="/d/">Today's Daily Prism</a>
+    <a href="https://shardrop.com/shardrop-privacy/">Privacy Policy</a>
+  </nav>
+</main>
+</body>
+</html>

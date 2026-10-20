@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Z2H89V93X7.com.lokesh.shardrop"],
+        "components": [
+          { "/": "/d", "comment": "Daily challenge links" },
+          { "/": "/d/*", "comment": "Daily challenge links" }
+        ]
+      }
+    ]
+  }
+}
