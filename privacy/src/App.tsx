@@ -32,8 +32,14 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#glance">Skip to the policy</a>
-      <TopBar active={active} progress={progress} />
-      <Hero />
+      <TopBar sections={SECTIONS} active={active} progress={progress} />
+      <Hero
+        kicker="Privacy Policy"
+        title={<>Your game.<br />Your data.<br /><em>Your call.</em></>}
+        lede="Shardrop is a free arcade game with no account and no sign-up. This is exactly what happens to your information when you play, in plain language."
+        facts={[['Effective', EFFECTIVE_DATE], ['Applies to', 'Shardrop for iPhone'], ['Reading time', '4 minutes']]}
+        start="#glance"
+      />
 
       <main className="paper">
         <Section id="glance" num="01" label="At a glance" title="The short version." wide>
@@ -157,6 +163,7 @@ export default function App() {
       <footer className="footer mono">
         <span>© 2026 {DEVELOPER}</span>
         <span>Shardrop Privacy Policy · Effective {EFFECTIVE_DATE}</span>
+        <a href="/terms/">Terms of Use</a>
         <a href="#top">Back to top ↑</a>
       </footer>
     </>

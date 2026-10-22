@@ -7,6 +7,7 @@ Shardrop's website, served from S3 behind CloudFront.
 | `/` | Home page |
 | `/d/?n=<daily>&s=<score>` | Daily challenge page that shared results link to |
 | `/privacy/` | Privacy policy (React app in `privacy/`) |
+| `/terms/` | Terms of use (the same app's second page, `privacy/terms/`) |
 | `/.well-known/apple-app-site-association` | Lets challenge links open the app (team `Z2H89V93X7`, `com.lokesh.shardrop`); served as JSON |
 | `/app-ads.txt` | Authorizes Google AdMob (publisher `pub-2408635475422098`) |
 

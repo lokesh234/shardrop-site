@@ -1,7 +1,8 @@
-/** The address players write to about privacy. Replace before relying on the contact link. */
-export const CONTACT_EMAIL = 'YOUR_CONTACT_EMAIL'
+/** The address players write to about privacy and the terms. */
+export const CONTACT_EMAIL = 'bmbtgroup@gmail.com'
 export const DEVELOPER = 'Lokesh Gangaramaney'
 export const EFFECTIVE_DATE = 'October 20, 2026'
+export const TERMS_EFFECTIVE_DATE = 'October 22, 2026'
 
 export const SECTIONS = [
   { id: 'glance', label: 'At a glance' },
@@ -14,5 +15,17 @@ export const SECTIONS = [
   { id: 'rights', label: 'Your rights' },
   { id: 'retention', label: 'Retention & changes' },
   { id: 'faq', label: 'Questions' },
+  { id: 'contact', label: 'Contact' },
+] as const
+
+export const TERMS_SECTIONS = [
+  { id: 'glance', label: 'At a glance' },
+  { id: 'license', label: 'Using Shardrop' },
+  { id: 'shards', label: 'Shards & purchases' },
+  { id: 'fair-play', label: 'Fair play' },
+  { id: 'health', label: 'Play safely' },
+  { id: 'services', label: 'Ads & other services' },
+  { id: 'changes', label: 'Changes' },
+  { id: 'legal', label: 'The legal part' },
   { id: 'contact', label: 'Contact' },
 ] as const
