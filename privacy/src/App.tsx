@@ -10,10 +10,10 @@ import { Faq } from './components/Faq'
 const IDS = SECTIONS.map((s) => s.id)
 
 const GLANCE = [
-  { swatch: 'cyan', claim: 'Your progress never leaves your phone.', detail: 'Scores, shards, skins and settings are saved on your device. We can’t see them.' },
+  { swatch: 'cyan', claim: 'Your progress never leaves your phone.', detail: 'Scores, shards, skins and settings are saved on your device. We only ever see anonymous totals.' },
   { swatch: 'violet', claim: 'There is no account.', detail: 'No name, email, contacts, photos or precise location. Ever.' },
   { swatch: 'pink', claim: 'Ads pay for the game.', detail: 'Google AdMob receives device and ad data to show them.' },
-  { swatch: 'gold', claim: 'Saying no costs you nothing.', detail: 'Decline tracking and the game plays exactly the same.' },
+  { swatch: 'gold', claim: 'Saying no costs you nothing.', detail: 'Decline tracking or turn off anonymous stats, and the game plays exactly the same.' },
 ]
 
 const RIGHTS = [
@@ -37,7 +37,7 @@ export default function App() {
         kicker="Privacy Policy"
         title={<>Your game.<br />Your data.<br /><em>Your call.</em></>}
         lede="Shardrop is a free arcade game with no account and no sign-up. This is exactly what happens to your information when you play, in plain language."
-        facts={[['Effective', EFFECTIVE_DATE], ['Applies to', 'Shardrop for iPhone'], ['Reading time', '4 minutes']]}
+        facts={[['Effective', EFFECTIVE_DATE], ['Applies to', 'Shardrop for iPhone'], ['Reading time', '5 minutes']]}
         start="#glance"
       />
 
@@ -55,7 +55,7 @@ export default function App() {
         </Section>
 
         <Section id="ledger" num="02" label="Data map" title="Where your information goes." wide
-          standfirst="Almost all of it stays on your iPhone. Apple and our ad partner get only what they need. We get nothing.">
+          standfirst="Almost all of it stays on your iPhone. Apple and our ad partner get only what they need. We get anonymous totals, nothing about you.">
           <Ledger />
         </Section>
 
@@ -64,7 +64,7 @@ export default function App() {
           <div className="prose">
             <p>To keep your progress between sessions, Shardrop saves your best scores, unlocked maps and mastery stars, shards and skins, missions, Daily Prism streaks and results, and your sound and haptics settings.</p>
             <p>None of it leaves your device through Shardrop, and we can’t see it. It’s included in your own iCloud or computer backups if you make them, under Apple’s terms. Deleting the app deletes it.</p>
-            <p>We don’t run servers, and Shardrop has no analytics of its own.</p>
+            <p>Apart from the anonymous counts described <a href="#analytics">below</a>, nothing about your play is sent to us.</p>
           </div>
         </Section>
 
@@ -76,7 +76,37 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="ads" num="05" label="Advertising" title="How ads work."
+        <Section id="analytics" num="05" label="Anonymous stats" title="Counting, not tracking."
+          standfirst="To see what to improve, the game sends us anonymous counts. You can turn them off.">
+          <div className="prose">
+            <p>Shardrop sends small, anonymous events to our own server: that the app was opened (once a day), and that a run ended, with its map, its mode (normal, Daily, Weekly or Gauntlet) and its score and length rounded into ranges. It also counts revives, boosts, Starter Week rewards, unlocks and purchases, by type. Each batch carries the day the app was installed, which everyone who installed that day shares, so we can tell how many players come back.</p>
+          </div>
+          <div className="columns">
+            <div>
+              <h3 className="col-head mono">What’s sent</h3>
+              <ul className="ruled">
+                <li><strong>Events,</strong> from a short fixed list, like “run ended on Neon Grid, score 50–99”.</li>
+                <li><strong>The day</strong> each happened, and the day the app was installed.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="col-head mono">What never is</h3>
+              <ul className="ruled">
+                <li>Your name, Game Center ID or any account</li>
+                <li>Device identifiers (no IDFV, no IDFA)</li>
+                <li>Exact scores, times or locations</li>
+                <li>Anything you type</li>
+              </ul>
+            </div>
+          </div>
+          <div className="prose">
+            <p>The server only adds each event to a daily total, such as “1,204 runs ended on Neon Grid today”, and keeps nothing else: not the events, and no record of which phone sent them. Like any internet request, the connection carries your IP address; our server doesn’t log or store it. The totals are kept on Amazon Web Services in the United States, sent over encrypted connections, and can’t be traced back to you.</p>
+            <p>To stop them, turn off <strong>Share anonymous stats</strong> in the game’s Settings. Anything waiting to be sent is deleted and nothing more is sent. Development builds never send any.</p>
+            <p className="fine">For users in the EEA and UK: the counts are designed to be anonymous. To the extent any of this is personal data, the legal basis is our legitimate interest in understanding how the game is played so we can improve it, and you can object at any time with the switch above.</p>
+          </div>
+        </Section>
+
+        <Section id="ads" num="06" label="Advertising" title="How ads work."
           standfirst="Ads keep Shardrop free. Tracking only happens if you say yes.">
           <div className="prose">
             <p>You’ll see an occasional full-screen ad between runs, and you can choose to watch an ad for bonus shards. There are never ads while you play. Ads are delivered by <strong>Google AdMob</strong>, which may let other ad companies bid to fill each one.</p>
@@ -113,19 +143,19 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="choices" num="06" label="Your choices" title="Four switches, all yours."
-          standfirst="Everything is controlled from the iPhone Settings app.">
+        <Section id="choices" num="07" label="Your choices" title="Five switches, all yours."
+          standfirst="Four in the iPhone Settings app, and one in the game.">
           <Choices />
         </Section>
 
-        <Section id="children" num="07" label="Children" title="For players 13 and up."
+        <Section id="children" num="08" label="Children" title="For players 13 and up."
           standfirst="Shardrop isn’t directed at children under 13.">
           <div className="prose">
             <p>We don’t knowingly collect personal information from children under 13, or the minimum age in your country. If you believe a child has provided information through the app, <a href="#contact">get in touch</a> and we’ll help remove it.</p>
           </div>
         </Section>
 
-        <Section id="rights" num="08" label="Your rights" title="What the law gives you."
+        <Section id="rights" num="09" label="Your rights" title="What the law gives you."
           standfirst="Depending on where you live, you have rights over your data. Using them never costs you anything in the game.">
           <dl className="rights">
             {RIGHTS.map(([term, desc]) => (
@@ -133,24 +163,24 @@ export default function App() {
             ))}
           </dl>
           <div className="prose">
-            <p>These come from laws like the GDPR in the EU and UK and state laws such as California’s. Because we don’t hold your data on servers, the quickest route is usually the settings above. For data held by our ad partner, you can also use Google’s privacy tools directly. You’re always welcome to <a href="#contact">write to us</a>.</p>
+            <p>These come from laws like the GDPR in the EU and UK and state laws such as California’s. Because we hold nothing about you personally (only anonymous totals), the quickest route is usually the settings above. For data held by our ad partner, you can also use Google’s privacy tools directly. You’re always welcome to <a href="#contact">write to us</a>.</p>
             <p className="fine">For users in the EEA and UK: the legal basis for advertising that uses your data is your consent. For non-personalized ads and fraud prevention, it’s our legitimate interest in keeping the game free and safe.</p>
           </div>
         </Section>
 
-        <Section id="retention" num="09" label="Retention & changes" title="How long, and what if it changes."
+        <Section id="retention" num="10" label="Retention & changes" title="How long, and what if it changes."
           standfirst="On-device data lasts until you delete the app. Anything sent out is encrypted.">
           <div className="prose">
-            <p>Data on your device stays until you delete the app. Apple keeps Game Center data under its own policies, and Google and its ad partners keep advertising data for the periods in theirs. Information sent to them travels over encrypted connections.</p>
+            <p>Data on your device stays until you delete the app. The anonymous totals are kept as long as they’re useful for improving the game; since they aren’t about anyone, they can’t be looked up or deleted per person. Apple keeps Game Center data under its own policies, and Google and its ad partners keep advertising data for the periods in theirs. Information sent to them travels over encrypted connections.</p>
             <p>If the way Shardrop handles information changes, for example a new partner, we’ll update this page and its effective date, and mention significant changes in the app’s release notes.</p>
           </div>
         </Section>
 
-        <Section id="faq" num="10" label="Questions" title="Things people ask.">
+        <Section id="faq" num="11" label="Questions" title="Things people ask.">
           <Faq />
         </Section>
 
-        <Section id="contact" num="11" label="Contact" title={<>Questions? Write to the person<br className="br-wide" /> who made the game.</>}>
+        <Section id="contact" num="12" label="Contact" title={<>Questions? Write to the person<br className="br-wide" /> who made the game.</>}>
           <div className="contact">
             <a className="contact-link" href={`mailto:${CONTACT_EMAIL}?subject=Shardrop%20privacy`}>
               {CONTACT_EMAIL} <span aria-hidden="true">→</span>

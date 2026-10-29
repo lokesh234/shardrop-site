@@ -1,7 +1,7 @@
 /** The address players write to about privacy and the terms. */
 export const CONTACT_EMAIL = 'bmbtgroup@gmail.com'
 export const DEVELOPER = 'Lokesh Gangaramaney'
-export const EFFECTIVE_DATE = 'October 20, 2026'
+export const EFFECTIVE_DATE = 'October 29, 2026'
 export const TERMS_EFFECTIVE_DATE = 'October 22, 2026'
 
 export const SECTIONS = [
@@ -9,6 +9,7 @@ export const SECTIONS = [
   { id: 'ledger', label: 'Where data goes' },
   { id: 'device', label: 'On your device' },
   { id: 'game-center', label: 'Game Center' },
+  { id: 'analytics', label: 'Anonymous stats' },
   { id: 'ads', label: 'Advertising' },
   { id: 'choices', label: 'Your choices' },
   { id: 'children', label: 'Children' },

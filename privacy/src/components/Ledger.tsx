@@ -12,6 +12,12 @@ const ROWS = [
     control: 'Settings › Game Center › Sign Out.',
   },
   {
+    where: 'Shardrop’s own server', tag: 'Optional', swatch: 'gold',
+    what: ['That the app was opened, once a day', 'Each run’s map and mode, with score and length rounded into ranges', 'Revives, boosts, Starter Week rewards, unlocks and purchases, by type', 'The day the app was installed'],
+    why: 'Seeing which maps and features work, so we know what to improve. Kept only as anonymous daily totals.',
+    control: 'Shardrop › Settings › Share anonymous stats.',
+  },
+  {
     where: 'Google AdMob & ad partners', tag: 'Ads', swatch: 'pink',
     what: ['Device identifiers (IDFV, and IDFA only if you allow tracking)', 'Device model, iOS version, language', 'IP address, for approximate location', 'Which ads were shown, watched or tapped'],
     why: 'Showing the ads that keep the game free, paying out ads you choose to watch, and stopping ad fraud.',
@@ -50,8 +56,8 @@ export function Ledger() {
           <span className="where-tag mono">Us</span>
         </div>
         <div role="cell" className="nothing-cell">
-          <p className="nothing-word">Nothing.</p>
-          <p>No servers, no analytics, no accounts. Shardrop sends nothing to us, so we can’t see your scores, your device or you.</p>
+          <p className="nothing-word">Totals only.</p>
+          <p>No accounts, no IDs, no IP addresses. We receive anonymous daily totals, like “1,204 runs on Neon Grid”, never your scores, your device or you.</p>
         </div>
       </div>
     </div>
